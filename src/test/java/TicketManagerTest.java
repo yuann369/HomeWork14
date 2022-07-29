@@ -10,7 +10,7 @@ public class TicketManagerTest {
     Ticket ticket5 = new Ticket(5, 5000, "KJH", "MSK", 540000);
     Ticket ticket6 = new Ticket(6, 5000, "DVO", "MSK", 540000);
     Ticket ticket7 = new Ticket(7, 10000, "MSK", "KJH", 540000);
-    Ticket ticket8 = new Ticket(8, 5000, "DVO", "MSK", 540000);
+    Ticket ticket8 = new Ticket(8, 10000, "MSK", "KJH", 540000);
 
 
     private TicketRepo repo = new TicketRepo();
@@ -28,7 +28,7 @@ public class TicketManagerTest {
         repo.save(ticket8);
 
         Ticket[] actual = manager.findAll("MSK", "KJH");
-        Ticket[] expected = {ticket4, ticket2, ticket7};
+        Ticket[] expected = {ticket4, ticket2, ticket7, ticket8};
 
         Assertions.assertArrayEquals(actual, expected);
     }
